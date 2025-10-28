@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - MIET Robotics & Drone Club</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <div class="container nav-bar">
+            <div class="logo-container">
+                <a href="index.html">
+                    <img src="images/miet.jpg" alt="MIET Logo" class="club-logo">
+                </a>
+                <h1 class="site-title">Robotics And Drones Club</h1>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="robotics.html">Robotics Club</a></li>
+                    <li><a href="drone.html">Drone Club</a></li>
+                    <li><a href="team.html">The Team</a></li>
+                    <li><a href="achievements.html">Achievements</a></li>
+                    <li><a href="#contact-details">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero" class="hero-section" style="background-image: url('images/club-hero.jpg.jpeg');">
+            <div class="hero-content">
+                <h2 class="animate-fade-in-up">Welcome to Robotics And Drone Club</h2>
+                <p class="animate-fade-in-up delay-200">MIET's combined platform for Robotics and Unmanned Aerial Vehicle (UAV) technology.</p>
+                <div class="hero-buttons animate-fade-in-up delay-400">
+                    <a href="robotics.html" class="btn btn-robotics">Explore Robotics <i class="fas fa-arrow-right"></i></a>
+                    <a href="drone.html" class="btn btn-drone">Explore Drones <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section intro-section reveal">
+            <div class="container">
+                <h2 class="section-title">Synergy of Innovation</h2>
+                <p class="lead-text">At MIET, the Robotics Club and Drone Club operate together to provide students with a comprehensive, cutting-edge platform for technical project development and competition.</p>
+
+                <div class="intro-cards-grid reveal-group">
+                    <div class="intro-card card-robotics reveal">
+                        <i class="fas fa-robot"></i>
+                        <h3>Robotics Club (Est. 2018)</h3>
+                        <p>Focused on mechanics, embedded systems, industrial automation, and competitive Robowar/Robo Race.</p>
+                        <a href="robotics.html">View Details <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                    <div class="intro-card card-drone reveal">
+                        <i class="fas fa-paper-plane"></i>
+                        <h3>Drone Club (Est. July 2022)</h3>
+                        <p>Dedicated to drone assembly, UAV technology, machine learning monitoring, and drone pilot license preparation.</p>
+                        <a href="drone.html">View Details <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section achievements-showcase bg-dark-theme reveal">
+            <div class="container">
+                <h2 class="section-title title-light">Recent Victories</h2>
+                <div class="quick-achievements-grid reveal-group">
+                    <div class="quick-achieve-card reveal">
+                        <span class="rank-badge gold">1st</span>
+                        <p>30kg Robowar competition at IIT Roorkee (March 2023).</p>
+                    </div>
+                    <div class="quick-achieve-card reveal">
+                        <span class="rank-badge bronze">3rd</span>
+                        <p>State Drone Competition at AKTU State (March 2023).</p>
+                    </div>
+                    <div class="quick-achieve-card reveal">
+                        <span class="rank-badge silver">2nd</span>
+                        <p>Sky rush at ESYA 2023, IIIT Delhi (Aug 2023).</p>
+                    </div>
+                </div>
+                <div class="center-text reveal">
+                    <a href="achievements.html" class="btn btn-primary-inv">View All Achievements <i class="fas fa-trophy"></i></a>
+                </div>
+            </div>
+        </section>
+        
+        <section id="contact-details" class="section contact-section-home reveal">
+            <div class="container">
+                <h2 class="section-title">Connect with Us</h2>
+                <div class="contact-card-home reveal-group">
+                    <div class="contact-detail reveal">
+                        <i class="fas fa-user-tie"></i>
+                        <h4>Faculty In-charge</h4>
+                        <p>Mr. **Arun Kumar Shukla**, Asst. Professor - ECE</p>
+                        <a href="mailto:arun.shukla@miet.ac.in">Email Faculty In-charge</a>
+                    </div>
+                    <div class="contact-detail reveal">
+                        <i class="fas fa-envelope"></i>
+                        <h4>General Inquiry</h4>
+                        <p>hodelectronics@miet.ac.in (ECE Dept. Contact)</p>
+                        <a href="mailto:hodelectronics@miet.ac.in">Send Email Now</a>
+                    </div>
+                    <div class="contact-detail reveal">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h4>Location</h4>
+                        <p>MEERUT INSTITUTE of ENGINEERING & TECHNOLOGY (MIET)</p>
+                        <a href="https://www.google.com/maps/search/MIET+Meerut" target="_blank">Get Directions</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© <span id="currentYear"></span> MIET Robotics & Drone Club. All Rights Reserved. | <a href="index.html">Privacy Policy</a></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

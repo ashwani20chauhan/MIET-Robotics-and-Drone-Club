@@ -1,0 +1,724 @@
+/* --- Global Reset & Variables --- */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Roboto:wght@400;700&display=swap');
+
+:root {
+    /* MIET Colors */
+    --miet-red: #E81A22; 
+    --miet-black: #1E1E1E;
+    
+    /* Hybrid Theme Colors */
+    --primary-blue: #225BC1; /* Robotics Accent */
+    --accent-yellow: #F9C10C; /* Highlighting Accent */
+    --text-color: #333333;
+    --bg-light: #f4f6f9; /* Soft Light Grey */
+    --bg-dark: #212529;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-light);
+    scroll-behavior: smooth;
+    overflow-x: hidden; 
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-blue);
+    transition: color 0.3s;
+}
+a:hover {
+    color: var(--accent-yellow);
+}
+/* --- Header & Navigation (Fixed Dark Theme) --- */
+header {
+    background-color: var(--miet-black);
+    color: var(--white);
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.club-logo {
+    height: 45px;
+    margin-right: 15px;
+    border-radius: 5px;
+}
+
+.site-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.8em;
+    font-weight: 700;
+    color: var(--miet-red);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 30px;
+}
+
+.nav-links a {
+    color: var(--white);
+    font-weight: 500;
+    padding: 5px 0;
+    position: relative;
+    transition: color 0.3s;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-yellow);
+    transition: width 0.3s ease-in-out;
+}
+
+.nav-links a:hover::after, .nav-links a.active::after {
+    width: 100%;
+}
+
+.nav-links a.active {
+    color: var(--accent-yellow);
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+/* --- Hero Section Styling --- */
+.hero-section, .page-hero {
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before, .page-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.65);
+    z-index: 1;
+}
+
+.hero-content, .page-hero .container {
+    z-index: 2;
+}
+
+.hero-content h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 4em;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    line-height: 1.1;
+}
+
+.hero-content p {
+    font-size: 1.4em;
+    margin-bottom: 50px;
+}
+
+.hero-buttons a {
+    padding: 14px 40px;
+    border-radius: 50px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0 15px;
+    border: 2px solid transparent;
+    transition: all 0.4s;
+}
+
+.btn-robotics {
+    background-color: var(--primary-blue);
+    color: var(--white);
+}
+
+.btn-robotics:hover {
+    background-color: var(--miet-black);
+    border-color: var(--primary-blue);
+    color: var(--primary-blue);
+}
+
+.btn-drone {
+    background-color: var(--accent-yellow);
+    color: var(--miet-black);
+}
+
+.btn-drone:hover {
+    background-color: var(--miet-black);
+    border-color: var(--accent-yellow);
+    color: var(--accent-yellow);
+}
+
+/* Page Hero Specifics */
+.page-hero .animate-fade-in-up {
+    text-align: left;
+}
+.hero-robotics {
+    background-image: url('images/robotics-hero-bg.jpg'); 
+}
+.hero-drone {
+    background-image: url('images/drone-hero-bg.jpg'); 
+}
+.hero-team {
+    background-image: url('images/team-hero-bg.jpg'); 
+}
+.hero-achievements {
+    background-image: url('images/trophy-hero-bg.jpg'); 
+}
+
+.page-hero h2 {
+    font-size: 3.5em;
+    text-align: left;
+    max-width: 80%;
+}
+.page-hero p {
+    font-size: 1.2em;
+    text-align: left;
+    margin-bottom: 0;
+}
+/* --- Common Section Styling --- */
+.section {
+    padding: 100px 0;
+    transition: background-color 0.5s;
+}
+.bg-dark-theme {
+    background-color: var(--bg-dark);
+    color: var(--white);
+}
+
+.section-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 3em;
+    text-align: center;
+    margin-bottom: 60px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 120px;
+    height: 4px;
+    margin: 15px auto 0;
+}
+
+.robot-title { color: var(--primary-blue); }
+.robot-title::after { background-color: var(--primary-blue); }
+.drone-title { color: var(--miet-red); }
+.drone-title::after { background-color: var(--miet-red); }
+.title-light { color: var(--accent-yellow); }
+.title-light::after { background-color: var(--accent-yellow); }
+
+/* --- Home Page Intro Cards --- */
+.lead-text {
+    text-align: center;
+    font-size: 1.25em;
+    color: #555;
+    margin-bottom: 50px;
+}
+.intro-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+}
+
+.intro-card {
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.4s, box-shadow 0.4s;
+    border-top: 5px solid;
+}
+.intro-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.card-robotics { border-color: var(--primary-blue); background: var(--white); }
+.card-drone { border-color: var(--miet-red); background: var(--white); }
+
+.intro-card i {
+    font-size: 3em;
+    margin-bottom: 15px;
+    color: var(--primary-blue);
+}
+.card-drone i { color: var(--miet-red); }
+
+.intro-card h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+/* --- Home Quick Achievements --- */
+.achievements-showcase .section-title {
+    margin-bottom: 40px;
+}
+
+.quick-achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.quick-achieve-card {
+    background-color: var(--miet-black);
+    color: var(--white);
+    padding: 25px;
+    border-radius: 8px;
+    border-left: 5px solid var(--accent-yellow);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+}
+
+.rank-badge {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.2em;
+    padding: 8px 15px;
+    border-radius: 4px;
+    margin-right: 15px;
+    font-weight: 700;
+}
+.gold { background-color: gold; color: var(--miet-black); }
+.silver { background-color: silver; color: var(--miet-black); }
+.bronze { background-color: #CD7F32; color: var(--white); }
+
+.btn-primary-inv {
+    background-color: transparent;
+    border: 2px solid var(--accent-yellow);
+    color: var(--accent-yellow);
+    padding: 12px 30px;
+    border-radius: 50px;
+    transition: all 0.3s;
+}
+.btn-primary-inv:hover {
+    background-color: var(--accent-yellow);
+    color: var(--miet-black);
+}
+/* --- Club Detail Sections (Robotics/Drone) --- */
+.club-details-section .detail-card {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid var(--primary-blue);
+    transition: all 0.3s;
+}
+.club-details-section .detail-card:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.club-details-section .detail-card h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+.club-details-section .detail-card i {
+    margin-right: 10px;
+    color: var(--accent-yellow);
+}
+
+/* Drone Road Map Styling */
+.roadmap-flex {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+.roadmap-step {
+    flex: 1;
+    background: var(--miet-black);
+    padding: 25px;
+    border-radius: 8px;
+    border-top: 4px solid var(--miet-red);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+.roadmap-step h4 {
+    font-family: 'Oswald', sans-serif;
+    color: var(--miet-red);
+    margin-bottom: 15px;
+    font-size: 1.6em;
+}
+.roadmap-step ul {
+    list-style: disc;
+    margin-left: 20px;
+}
+
+/* Achievement Highlights */
+.achievement-highlights .highlights-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+.highlight-card {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border-bottom: 5px solid var(--primary-blue);
+}
+.drone-title ~ .achievement-highlights .highlight-card {
+    border-bottom: 5px solid var(--miet-red);
+}
+
+.trophy-icon {
+    font-size: 2em;
+    color: var(--accent-yellow);
+    display: block;
+    margin-bottom: 10px;
+}
+.trophy-icon i {
+    font-size: 0.5em;
+    margin: 0;
+}
+.trophy-icon .fa-certificate {
+    color: var(--primary-blue);
+}
+
+/* --- Team Page Styling --- */
+.member-card {
+    background: var(--white);
+    color: var(--text-color);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+.student-section .member-card {
+    background: var(--miet-black);
+    color: var(--white);
+    border: 1px solid #333;
+}
+.member-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid var(--accent-yellow);
+}
+.member-card h4 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.6em;
+    color: var(--primary-blue);
+}
+.student-section .member-card h4 {
+    color: var(--accent-yellow);
+}
+.member-card .role {
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+/* Additional styling for Team Page */
+.secondary-members {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px dashed #555;
+}
+.member-sub-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.8em;
+    color: var(--accent-yellow);
+    margin-top: 40px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+/* --- Achievements Page Styling --- */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 60px;
+    background: var(--white);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    /* FIX 1: Set default text color for table content */
+    color: var(--text-color); 
+}
+
+/* FIX 2: Ensure table cells also use the dark text color */
+.data-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    color: var(--text-color);
+}
+
+
+/* --- New CSS for Image Showcase (PDF Images) --- */
+.image-showcase {
+    padding: 40px 0;
+    text-align: center;
+}
+.image-showcase.bg-dark-theme {
+    background-color: var(--bg-dark);
+}
+.showcase-caption {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.8em;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    display: inline-block;
+    border-bottom: 2px solid var(--accent-yellow);
+}
+.large-showcase-img {
+    width: 80%;
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: transform 0.4s;
+}
+.large-showcase-img:hover {
+    transform: scale(1.01);
+}
+
+
+/* --- Contact Section Home --- */
+.contact-card-home {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+.contact-detail {
+    background: var(--miet-black);
+    color: var(--white);
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    border-bottom: 4px solid var(--accent-yellow);
+}
+.contact-detail i {
+    font-size: 2.5em;
+    color: var(--miet-red);
+    margin-bottom: 15px;
+}
+.contact-detail h4 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: var(--accent-yellow);
+}
+.contact-detail a {
+    color: var(--white);
+    text-decoration: underline;
+    display: block;
+    margin-top: 10px;
+}
+.contact-detail a:hover {
+    color: var(--miet-red);
+}
+
+/* FIX: Club Specific Contact Section Styling (for Drone page) */
+.contact-details-club {
+    padding: 60px 0;
+}
+.contact-club-details {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    text-align: center;
+}
+.contact-item {
+    padding: 20px;
+    border-radius: 8px;
+    background-color: var(--miet-black);
+    flex-basis: 40%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+.contact-item i {
+    font-size: 2em;
+    color: var(--miet-red);
+    margin-bottom: 10px;
+}
+.contact-item h4 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.3em;
+    color: var(--accent-yellow);
+    margin-bottom: 10px;
+}
+.contact-item p a {
+    color: var(--white); /* Ensure the link text is white/visible */
+    font-weight: 700;
+    font-size: 1.1em;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: var(--miet-black);
+    color: #999;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9em;
+}
+footer a {
+    color: var(--primary-blue);
+}
+/* --- Scroll Reveal Animations (JavaScript driven) --- */
+.reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal-group > .reveal {
+    transition-delay: var(--delay);
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 1s ease-out forwards;
+    opacity: 0;
+}
+.delay-200 { animation-delay: 0.2s; }
+.delay-400 { animation-delay: 0.4s; }
+/* --- Media Queries --- */
+@media (max-width: 992px) {
+    .intro-cards-grid, .quick-achievements-grid, .roadmap-flex, .achievement-highlights .highlights-grid, .contact-card-home {
+        grid-template-columns: 1fr;
+    }
+    .page-hero .container {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+    .page-hero h2 {
+        font-size: 2.5em;
+        max-width: 100%;
+        text-align: center;
+    }
+    .page-hero p {
+        text-align: center;
+        margin-top: 15px;
+    }
+    .hero-content h2 {
+        font-size: 3em;
+    }
+    .large-showcase-img {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: var(--miet-black);
+        position: absolute;
+        top: 65px; 
+        left: 0;
+        padding: 10px 0;
+    }
+    .nav-links.active {
+        display: flex;
+    }
+    .nav-links li {
+        margin: 10px 20px;
+        text-align: center;
+    }
+    .menu-toggle {
+        display: block;
+        color: var(--white);
+    }
+    .hero-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    .hero-buttons a {
+        margin: 0;
+    }
+    .section-title {
+        font-size: 2.2em;
+    }
+    .data-table thead {
+        display: none; /* Hide header on small screen */
+    }
+    .data-table, .data-table tbody, .data-table tr, .data-table td {
+        display: block;
+        width: 100%;
+    }
+    .data-table tr {
+        margin-bottom: 20px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    .data-table td {
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+    }
+    .data-table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 10px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        font-weight: 700;
+        text-align: left;
+    }
+    .contact-club-details {
+        flex-direction: column;
+    }
+}
